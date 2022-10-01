@@ -1,0 +1,13 @@
+[Unit]
+Description=suspend POP-OS on lid close
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=python3 /home/johannes/suspender-hack/suspend-hack.py
+
+[Install]
+WantedBy=multi-user.target
